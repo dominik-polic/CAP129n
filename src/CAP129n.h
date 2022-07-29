@@ -291,7 +291,7 @@ class CAP129n
 {
 public:
   // Constructor
-  CAP129n(byte addr = DEFAULT_I2C_ADDR);
+  CAP129n(uint8_t specifiedModel, byte addr = DEFAULT_I2C_ADDR);
   
   int begin(TwoWire &wirePort = Wire, uint8_t deviceAddress = DEFAULT_I2C_ADDR, uint8_t sensitivity = SENSITIVITY_32X, bool interrupts = true, bool sgEnable = false);  
   bool isConnected();

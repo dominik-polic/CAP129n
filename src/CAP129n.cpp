@@ -12,7 +12,7 @@
  * Constructor
  * addr should be 0x50
  */
-CAP129n::CAP129n(byte addr, uint8_t specifiedModel){
+CAP129n::CAP129n(uint8_t specifiedModel, byte addr){
 	_deviceAddress = addr;
 	_specifiedModel = specifiedModel;
 }
@@ -219,7 +219,7 @@ void CAP129n::setMTPDetectionMode(uint8_t mode){
 	else if(mode == MTP_MODE_MINIMAL_TOUCHES) reg.MULTIPLE_TOUCH_PATTERN_CONFIGURATION_FIELDS.COMP_PTRN = 0x00;
 	writeRegister(MULTIPLE_TOUCH_PATTERN_CONFIG, reg.MULTIPLE_TOUCH_PATTERN_CONFIGURATION_COMBINED);  
 }
-void CAP129n::setMTPPatternSpecificButtons(bool cs1_mtp, bool cs2_mtp, bool cs3_mtp){
+void CAP129n::setMTPPatternSpecificButtons(bool cs1_mtp, bool cs2_mtp, bool cs3_mtp, bool cs4_mtp, bool cs5_mtp, bool cs6_mtp, bool cs7_mtp, bool cs8_mtp){
 	MULTIPLE_TOUCH_PATTERN_REG reg;
 	reg.MULTIPLE_TOUCH_PATTERN_COMBINED = readRegister(MULTIPLE_TOUCH_PATTERN);
 	reg.MULTIPLE_TOUCH_PATTERN_FIELDS.CS1_PTRN = cs1_mtp?0x01:0x00;
@@ -594,9 +594,9 @@ uint8_t CAP129n::getMainControl(){
 // kraj dodavanja VM
 
 /* READ A SINGLE REGISTER
-    Read a single byte of data from the CAP1293 register "reg"
+    Read a single byte of data from the CAP129n register "reg"
 */
-byte CAP129n::readRegister(CAP1293_Register reg)
+byte CAP129n::readRegister(CAP129n_Register reg)
 {
     _i2cPort->beginTransmission(_deviceAddress);
     _i2cPort->write(reg);
@@ -615,10 +615,10 @@ byte CAP129n::readRegister(CAP1293_Register reg)
 }
 
 /* READ MULTIPLE REGISTERS
-    Read "en" bytes from the CAP1293m, starting at register "reg." Bytes are 
+    Read "en" bytes from the CAP129n, starting at register "reg." Bytes are 
     stored in "buffer" on exit.
 */
-void CAP129n::readRegisters(CAP1293_Register reg, byte *buffer, byte len)
+void CAP129n::readRegisters(CAP129n_Register reg, byte *buffer, byte len)
 {
     _i2cPort->beginTransmission(_deviceAddress);
     _i2cPort->write(reg);
@@ -635,9 +635,9 @@ void CAP129n::readRegisters(CAP1293_Register reg, byte *buffer, byte len)
 }
 
 /* WRITE TO A SINGLE REGISTER
-    Wire a single btyte of data to a register in CAP1293
+    Wire a single btyte of data to a register in CAP129n
 */
-void CAP129n::writeRegister(CAP1293_Register reg, byte data)
+void CAP129n::writeRegister(CAP129n_Register reg, byte data)
 {
     writeRegisters(reg, &data, 1);
 }
@@ -646,7 +646,7 @@ void CAP129n::writeRegister(CAP1293_Register reg, byte data)
     Write an array of "len" bytes ("buffer"), starting at register "reg,"
     and auto-incementing to the next
 */
-void CAP129n::writeRegisters(CAP1293_Register reg, byte *buffer, byte len)
+void CAP129n::writeRegisters(CAP129n_Register reg, byte *buffer, byte len)
 {
     _i2cPort->beginTransmission(_deviceAddress);
     _i2cPort->write(reg);
