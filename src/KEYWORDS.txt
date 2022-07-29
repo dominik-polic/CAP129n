@@ -1,0 +1,94 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+CAP129n	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+isConnected	KEYWORD2
+setSensitivity	KEYWORD2
+isTouched	KEYWORD2
+clearInterrupts	KEYWORD2
+enableSignalGuard	KEYWORD2
+disableSignalGuard	KEYWORD2
+enableSensing	KEYWORD2
+disableSensing	KEYWORD2
+isEnabledSensing	KEYWORD2
+setInterruptEnabled	KEYWORD2
+setInterruptDisabled	KEYWORD2
+# isInterruptEnabled	KEYWORD2
+
+enableSMBusTimeout	KEYWORD2
+disableSMBusTimeout	KEYWORD2
+setMaximumHoldDuration	KEYWORD2
+enableMaximumHoldDuration	KEYWORD2
+disableMaximumHoldDuration	KEYWORD2
+enableRFNoiseFilter	KEYWORD2
+disableRFNoiseFilter	KEYWORD2
+
+setMultipleTouchLimit	KEYWORD2
+disableMultipleTouchLimit	KEYWORD2
+enableMultipleTouchLimit	KEYWORD2
+enableMTPDetection	KEYWORD2
+disableMTPDetection	KEYWORD2
+setMTPDetectionMode	KEYWORD2
+setMTPPatternSpecificButtons	KEYWORD2
+setMTPDetectionTreshold	KEYWORD2
+setMTPDetectionMinimalButtons	KEYWORD2
+isMTPTouched	KEYWORD2
+enableMTPInterrupt	KEYWORD2
+disableMTPInterrupt	KEYWORD2
+calibrateAll	KEYWORD2
+calibrateTouch	KEYWORD2
+enableMTPInterrupt	KEYWORD2
+disableMTPInterrupt	KEYWORD2
+disableInterruptRepeatRate	KEYWORD2
+enableInterruptRepeatRate	KEYWORD2
+disableInterruptOnRelease	KEYWORD2
+enableInterruptOnRelease	KEYWORD2
+clearInterrupt	KEYWORD2
+
+######################################
+# Constants (LITERAL1)
+#######################################
+SENSITIVITY_128X	LITERAL1
+SENSITIVITY_64X	LITERAL1
+SENSITIVITY_32X	LITERAL1
+SENSITIVITY_16X	LITERAL1
+SENSITIVITY_8X	LITERAL1
+SENSITIVITY_4X	LITERAL1
+SENSITIVITY_2X	LITERAL1
+SENSITIVITY_1X	LITERAL1
+DEFAULT_I2C_ADDR	LITERAL1
+BEGIN_SUCCESS	LITERAL1
+ERR_WRONG_PROD_ID	LITERAL1
+ERR_NO_DEVICE_AT_ADDRESS	LITERAL1
+MTP_MODE_SPECIFIC	LITERAL1
+MTP_MODE_MINIMAL_TOUCHES	LITERAL1
+MTP_TRESHOLD_12_5	LITERAL1
+MTP_TRESHOLD_25	LITERAL1
+MTP_TRESHOLD_37_5	LITERAL1
+MTP_TRESHOLD_100	LITERAL1
+MAX_DURRATION_560 LITERAL1
+MAX_DURRATION_840 LITERAL1
+MAX_DURRATION_1120 LITERAL1
+MAX_DURRATION_1400 LITERAL1
+MAX_DURRATION_1680 LITERAL1
+MAX_DURRATION_2240 LITERAL1
+MAX_DURRATION_2800 LITERAL1
+MAX_DURRATION_3360 LITERAL1
+MAX_DURRATION_3920 LITERAL1
+MAX_DURRATION_4480 LITERAL1
+MAX_DURRATION_5600 LITERAL1
+MAX_DURRATION_6720 LITERAL1
+MAX_DURRATION_7840 LITERAL1
+MAX_DURRATION_8906 LITERAL1
+MAX_DURRATION_10080 LITERAL1
+MAX_DURRATION_11200 LITERAL1
