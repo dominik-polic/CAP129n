@@ -9,6 +9,7 @@
 
 #include <Arduino.h>
 #include <Wire.h>
+
 #include "CAP129n_registers.h"
 
 //Default I2C address
@@ -91,7 +92,7 @@ typedef union {
     uint8_t MTP : 1;
     uint8_t MULT : 1;
     uint8_t EMPTY_1 : 1;
-    uint8_t PWR : 1;
+    uint8_t CAP_PWR : 1;
     uint8_t ACAL_FAIL : 1;
     uint8_t BC_OUT : 1;
     uint8_t EMPTY_2 : 1;

@@ -4,6 +4,7 @@
  
 #include <Arduino.h>
 #include <Wire.h>
+
 #include "CAP129n_registers.h"
 #include "CAP129n.h"
  
